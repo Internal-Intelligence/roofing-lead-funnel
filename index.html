@@ -3,261 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free AI Roof Assessment | Neading Remodeling - Jonesboro, AR</title>
-    <meta name="description" content="Get an instant AI-powered roof analysis + free professional assessment for your Jonesboro home.">
+    <title>Free AI Roof Assessment | Neading Remodeling</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600&amp;display=swap');
-        
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
-        .form-input { transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1); }
-        .form-input:focus { outline: none; border-color: #c2410c; box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.12); }
-        .photo-preview { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
-        .photo-preview img { width: 100%; height: 120px; object-fit: cover; }
-        .remove-photo { position: absolute; top: 8px; right: 8px; background: rgba(185, 28, 28, 0.9); color: white; border: none; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: all 0.2s ease; }
-        .modern-shadow { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
-        .ai-result-card { animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    </style>
 </head>
-<body class="bg-slate-50">
-    <!-- NAVBAR -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-x-3">
-                    <div class="w-12 h-12 bg-[#c2410c] rounded-2xl flex items-center justify-center">
-                        <i class="fa-solid fa-home text-white text-3xl"></i>
-                    </div>
-                    <div>
-                        <div class="font-bold text-2xl text-slate-900">Neading Remodeling</div>
-                        <div class="text-xs text-slate-500 -mt-1">ROOFING &amp; REMODELING • AI POWERED</div>
-                    </div>
-                </div>
-
-                <div class="hidden md:flex items-center gap-x-4">
-                    <a href="tel:9015550199" class="flex items-center gap-x-2 text-slate-700 hover:text-[#c2410c] transition-colors">
-                        <i class="fa-solid fa-phone text-[#c2410c]"></i>
-                        <span class="font-semibold">(901) 555-0199</span>
-                    </a>
-                    <div class="px-4 py-2 bg-[#c2410c] text-white text-sm font-semibold rounded-2xl flex items-center gap-x-2">
-                        <i class="fa-solid fa-robot"></i>
-                        <span>AI Analysis in &lt; 60s</span>
-                    </div>
-                </div>
-
-                <div class="md:hidden">
-                    <a href="tel:9015550199" class="flex items-center justify-center w-12 h-12 bg-[#c2410c] text-white rounded-2xl">
-                        <i class="fa-solid fa-phone text-xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <div class="hero-bg text-white">
-        <div class="max-w-7xl mx-auto px-6 pt-16 pb-20">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6">
-                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                        <span class="text-sm font-medium">Now with AI Roof Analysis</span>
-                    </div>
-                    
-                    <h1 class="text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tighter mb-6">
-                        Get Your Free<br>
-                        <span class="text-[#c2410c]">AI Roof Assessment</span><br>
-                        in 60 Seconds
-                    </h1>
-                    
-                    <p class="max-w-lg text-xl text-white/90 mb-8">
-                        Upload photos of your roof and our AI will instantly analyze damage, severity, and give you a professional recommendation.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FORM -->
-    <div class="max-w-3xl mx-auto px-6 -mt-12 relative z-10 pb-16">
-        <div class="bg-white rounded-3xl modern-shadow border border-slate-100 overflow-hidden">
+<body class="bg-slate-50 p-6">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-8">Neading Remodeling - AI Roof Assessment</h1>
+        
+        <form id="leadForm" class="bg-white p-8 rounded-3xl shadow">
+            <input type="text" id="fullName" placeholder="Full Name" class="w-full p-4 border mb-4 rounded-2xl" required>
+            <input type="tel" id="phone" placeholder="(901) 555-0199" class="w-full p-4 border mb-4 rounded-2xl" required>
+            <input type="email" id="email" placeholder="Email" class="w-full p-4 border mb-4 rounded-2xl" required>
+            <input type="text" id="address" placeholder="Address in Jonesboro" class="w-full p-4 border mb-4 rounded-2xl" required>
             
-            <div class="bg-[#0f172a] px-8 py-6 text-white">
-                <div class="flex items-center gap-x-4">
-                    <div class="w-14 h-14 bg-[#c2410c] rounded-2xl flex items-center justify-center">
-                        <i class="fa-solid fa-robot text-3xl"></i>
-                    </div>
-                    <div>
-                        <div class="font-bold text-2xl">AI-Powered Roof Assessment</div>
-                        <div class="text-[#c2410c] text-sm font-medium">Instant analysis • No obligation • 100% free</div>
-                    </div>
-                </div>
-            </div>
+            <select id="projectType" class="w-full p-4 border mb-4 rounded-2xl">
+                <option value="Roof Replacement">Roof Replacement</option>
+                <option value="Storm Damage Repair">Storm Damage Repair</option>
+                <option value="Roof Repair">Roof Repair</option>
+            </select>
 
-            <form id="leadForm" class="p-8 space-y-8">
-                
-                <div>
-                    <h3 class="font-semibold text-lg text-slate-900 mb-4 flex items-center gap-x-2">
-                        <i class="fa-solid fa-user text-[#c2410c]"></i>
-                        <span>Your Information</span>
-                    </h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1.5">Full Name *</label>
-                            <input type="text" id="fullName" required class="form-input w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-lg focus:border-[#c2410c]">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1.5">Phone Number *</label>
-                            <input type="tel" id="phone" required placeholder="(901) 555-0199" class="form-input w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-lg focus:border-[#c2410c]">
-                        </div>
-                    </div>
-                    
-                    <div class="mt-4">
-                        <label class="block text-sm font-medium text-slate-700 mb-1.5">Email Address *</label>
-                        <input type="email" id="email" required class="form-input w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-lg focus:border-[#c2410c]">
-                    </div>
-                </div>
+            <input type="file" id="photoInput" multiple accept="image/*" class="w-full p-4 border mb-6 rounded-2xl">
 
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Property Address *</label>
-                    <input type="text" id="address" required placeholder="123 Main St, Jonesboro, AR 72401" class="form-input w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-lg focus:border-[#c2410c]">
-                </div>
+            <button type="submit" id="submitBtn" class="w-full py-6 bg-orange-600 text-white font-bold text-xl rounded-3xl">
+                ANALYZE MY ROOF WITH AI
+            </button>
+        </form>
 
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1.5">What best describes your project? *</label>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                        <label class="flex items-center gap-x-3 p-4 border border-slate-200 rounded-2xl cursor-pointer hover:border-[#c2410c] has-[:checked]:border-[#c2410c] has-[:checked]:bg-orange-50">
-                            <input type="radio" name="projectType" value="Roof Replacement" class="accent-[#c2410c]" required>
-                            <span class="font-medium">Roof Replacement</span>
-                        </label>
-                        <label class="flex items-center gap-x-3 p-4 border border-slate-200 rounded-2xl cursor-pointer hover:border-[#c2410c] has-[:checked]:border-[#c2410c] has-[:checked]:bg-orange-50">
-                            <input type="radio" name="projectType" value="Storm Damage Repair" class="accent-[#c2410c]" required>
-                            <span class="font-medium">Storm Damage</span>
-                        </label>
-                        <label class="flex items-center gap-x-3 p-4 border border-slate-200 rounded-2xl cursor-pointer hover:border-[#c2410c] has-[:checked]:border-[#c2410c] has-[:checked]:bg-orange-50">
-                            <input type="radio" name="projectType" value="Roof Repair" class="accent-[#c2410c]" required>
-                            <span class="font-medium">Roof Repair</span>
-                        </label>
-                        <label class="flex items-center gap-x-3 p-4 border border-slate-200 rounded-2xl cursor-pointer hover:border-[#c2410c] has-[:checked]:border-[#c2410c] has-[:checked]:bg-orange-50">
-                            <input type="radio" name="projectType" value="Full Home Remodel" class="accent-[#c2410c]" required>
-                            <span class="font-medium">Full Remodel</span>
-                        </label>
-                        <label class="flex items-center gap-x-3 p-4 border border-slate-200 rounded-2xl cursor-pointer hover:border-[#c2410c] has-[:checked]:border-[#c2410c] has-[:checked]:bg-orange-50">
-                            <input type="radio" name="projectType" value="Other" class="accent-[#c2410c]" required>
-                            <span class="font-medium">Other</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1.5">When do you need this done?</label>
-                    <select id="timeline" class="form-input w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-lg focus:border-[#c2410c]">
-                        <option value="As soon as possible">As soon as possible</option>
-                        <option value="Within 1-2 months">Within 1-2 months</option>
-                        <option value="Within 3-6 months">Within 3-6 months</option>
-                        <option value="Just exploring options">Just exploring options</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-2">Upload Photos of Your Roof *</label>
-                    <div id="photo-dropzone" class="border-2 border-dashed border-slate-300 hover:border-[#c2410c] transition-colors rounded-3xl p-8 text-center cursor-pointer bg-slate-50 hover:bg-white">
-                        <i class="fa-solid fa-cloud-upload-alt text-5xl text-[#c2410c] mb-3"></i>
-                        <div class="font-semibold text-lg">Drop photos here or click to upload</div>
-                        <input type="file" id="photoInput" multiple accept="image/*" class="hidden">
-                    </div>
-                    <div id="photo-previews" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4"></div>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1.5">Anything else we should know?</label>
-                    <textarea id="notes" rows="3" placeholder="Insurance claim? Budget range?" class="form-input w-full px-4 py-3.5 border border-slate-300 rounded-2xl text-lg focus:border-[#c2410c]"></textarea>
-                </div>
-
-                <button type="submit" id="submitBtn" class="w-full py-5 bg-gradient-to-r from-[#c2410c] to-[#9f1239] text-white font-bold text-xl rounded-3xl flex items-center justify-center gap-x-3">
-                    <span id="submitText">ANALYZE MY ROOF WITH AI</span>
-                    <i class="fa-solid fa-magic ml-2" id="submitIcon"></i>
-                </button>
-            </form>
-
-            <div id="aiResultSection" class="hidden p-8 bg-slate-50 border-t border-slate-200">
-                <div class="flex items-center gap-x-3 mb-6">
-                    <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center">
-                        <i class="fa-solid fa-robot text-white text-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="font-bold text-2xl text-slate-900">AI Analysis Complete</div>
-                        <div class="text-emerald-600 text-sm font-medium">Powered by Claude 3.5 Sonnet</div>
-                    </div>
-                </div>
-                <div id="aiAssessmentText" class="bg-white p-6 rounded-2xl border border-slate-200 whitespace-pre-wrap"></div>
-                
-                <div class="mt-6 flex gap-4">
-                    <button onclick="bookInspection()" class="flex-1 py-4 bg-[#0f172a] text-white font-semibold rounded-2xl">Book Free Inspection</button>
-                    <button onclick="restartForm()" class="flex-1 py-4 border border-slate-300 font-semibold rounded-2xl">Submit Another</button>
-                </div>
-            </div>
-        </div>
+        <div id="result" class="mt-8 hidden bg-white p-8 rounded-3xl shadow"></div>
     </div>
 
     <script>
         const SUPABASE_URL = "https://mrhvhcloeqcqmbicxcbu.supabase.co";
         const SUPABASE_ANON_KEY = "sb_publishable_T3FswYTFVQP3Z8q8Xriwlg_GVMjprsr";
         const EDGE_FUNCTION_URL = `${SUPABASE_URL}/functions/v1/analyze-roof-photos`;
-        let selectedFiles = [];
 
-        function init() {
-            const form = document.getElementById('leadForm');
-            form.addEventListener('submit', handleFormSubmit);
-            initPhotoUpload();
-        }
-
-        function initPhotoUpload() {
-            const dropzone = document.getElementById('photo-dropzone');
-            const fileInput = document.getElementById('photoInput');
-            const previews = document.getElementById('photo-previews');
-
-            dropzone.addEventListener('click', () => fileInput.click());
-            fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
-
-            function handleFiles(files) {
-                Array.from(files).forEach(file => {
-                    if (!file.type.startsWith('image/')) return;
-                    selectedFiles.push(file);
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        const div = document.createElement('div');
-                        div.className = 'photo-preview group';
-                        div.innerHTML = `
-                            <img src="${e.target.result}" alt="Preview">
-                            <button onclick="this.parentElement.remove()" class="remove-photo"><i class="fa-solid fa-times"></i></button>
-                        `;
-                        previews.appendChild(div);
-                    };
-                    reader.readAsDataURL(file);
-                });
-            }
-        }
-
-        async function handleFormSubmit(e) {
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            
             const btn = document.getElementById('submitBtn');
+            btn.textContent = 'UPLOADING...';
             btn.disabled = true;
-            btn.querySelector('#submitText').textContent = 'UPLOADING PHOTOS & ANALYZING...';
 
             try {
+                const files = document.getElementById('photoInput').files;
+                if (files.length === 0) {
+                    alert("Please upload at least one photo");
+                    btn.disabled = false;
+                    btn.textContent = 'ANALYZE MY ROOF WITH AI';
+                    return;
+                }
+
                 const photoUrls = [];
-                const bucketName = 'lead-photos';
+                
+                for (let file of files) {
+                    const fileName = Date.now() + '-' + file.name;
+                    const uploadUrl = `${SUPABASE_URL}/storage/v1/object/lead-photos/${fileName}`;
 
-                for (const file of selectedFiles) {
-                    const fileName = `${Date.now()}-${file.name}`;
-                    const url = `${SUPABASE_URL}/storage/v1/object/${bucketName}/${fileName}`;
-
-                    const res = await fetch(url, {
+                    const uploadRes = await fetch(uploadUrl, {
                         method: 'POST',
                         headers: {
                             'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
@@ -268,9 +71,12 @@
                         body: file
                     });
 
-                    if (!res.ok) throw new Error("Upload failed");
+                    if (!uploadRes.ok) {
+                        const errorText = await uploadRes.text();
+                        throw new Error("Upload failed: " + errorText);
+                    }
 
-                    photoUrls.push(`${SUPABASE_URL}/storage/v1/object/public/${bucketName}/${fileName}`);
+                    photoUrls.push(`${SUPABASE_URL}/storage/v1/object/public/lead-photos/${fileName}`);
                 }
 
                 const formData = {
@@ -278,13 +84,13 @@
                     phone: document.getElementById('phone').value,
                     email: document.getElementById('email').value,
                     address: document.getElementById('address').value,
-                    projectType: document.querySelector('input[name="projectType"]:checked').value,
-                    timeline: document.getElementById('timeline').value,
-                    notes: document.getElementById('notes').value || '',
+                    projectType: document.getElementById('projectType').value,
+                    timeline: "As soon as possible",
+                    notes: "",
                     photoUrls: photoUrls
                 };
 
-                const res2 = await fetch(EDGE_FUNCTION_URL, {
+                const aiRes = await fetch(EDGE_FUNCTION_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -293,32 +99,26 @@
                     body: JSON.stringify(formData)
                 });
 
-                const result = await res2.json();
+                const result = await aiRes.json();
 
                 if (result.success) {
-                    document.getElementById('leadForm').style.display = 'none';
-                    document.getElementById('aiResultSection').classList.remove('hidden');
-                    document.getElementById('aiAssessmentText').innerHTML = result.assessment.replace(/\n/g, '<br>');
+                    document.getElementById('result').innerHTML = `
+                        <h2 class="text-2xl font-bold mb-4">AI Analysis Complete</h2>
+                        <div class="bg-slate-100 p-6 rounded-2xl whitespace-pre-wrap">${result.assessment}</div>
+                    `;
+                    document.getElementById('result').classList.remove('hidden');
                 } else {
-                    alert("Error: " + result.error);
+                    alert("AI Error: " + result.error);
                 }
+
             } catch (err) {
                 alert("Error: " + err.message);
+                console.error(err);
             }
 
             btn.disabled = false;
-            btn.querySelector('#submitText').textContent = 'ANALYZE MY ROOF WITH AI';
-        }
-
-        function bookInspection() {
-            window.location.href = "tel:9015550199";
-        }
-
-        function restartForm() {
-            location.reload();
-        }
-
-        window.onload = init;
+            btn.textContent = 'ANALYZE MY ROOF WITH AI';
+        });
     </script>
 </body>
 </html>
