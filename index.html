@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <!-- Main Form -->
+    <!-- Form -->
     <div class="max-w-3xl mx-auto px-6 -mt-12 relative z-10 pb-16">
         <div class="bg-white rounded-3xl modern-shadow border border-slate-100 overflow-hidden">
             
@@ -64,4 +64,23 @@
                     <input type="tel" id="phone" placeholder="(901) 555-0199" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl" required>
                 </div>
                 <input type="email" id="email" placeholder="Email Address" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl" required>
-               
+                <input type="text" id="address" placeholder="Property Address" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl" required>
+
+                <div>
+                    <label class="block font-medium mb-2">Project Type</label>
+                    <select id="projectType" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl">
+                        <option value="Roof Replacement">Roof Replacement</option>
+                        <option value="Storm Damage Repair">Storm Damage Repair</option>
+                        <option value="Roof Repair">Roof Repair</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-medium mb-2">Upload Roof Photos</label>
+                    <input type="file" id="photoInput" multiple accept="image/*" class="w-full p-4 border border-slate-300 rounded-2xl">
+                    <div id="photo-previews" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4"></div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="w-full py-5 bg-gradient-to-r from-[#c2410c] to-[#9f1239] text-white font-bold text-xl rounded-3xl">
+                   
