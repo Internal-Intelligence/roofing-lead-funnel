@@ -110,7 +110,7 @@
 
                     <button type="submit" id="submitBtn"
                             class="w-full py-4 bg-[#c2410c] hover:bg-[#9f1239] text-white font-bold text-lg rounded-2xl transition-colors">
-                        ANALYZE WITH AI
+                        ANALYZE WITH GROK 4.3
                     </button>
 
                     <p class="text-xs text-center text-slate-500">We respect your privacy. Your information will only be used to respond to your request.</p>
@@ -131,73 +131,4 @@
                                 <div class="text-sm text-slate-500">Mon–Fri 7am–6pm</div>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-envelope text-[#c2410c] mt-1"></i>
-                            <div>info@neadinghomeservices.com</div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-map-marker-alt text-[#c2410c] mt-1"></i>
-                            <div>Bartlett, TN<br><span class="text-sm text-slate-500">Greater Memphis service area</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-[#c2410c] text-white rounded-3xl p-8">
-                    <div class="font-bold text-2xl mb-4">EMERGENCY?</div>
-                    <div class="mb-5 text-sm">For urgent exterior or storm damage repairs, call us directly:</div>
-                    <a href="tel:9015550199" class="block w-full py-3.5 bg-black text-center rounded-2xl font-bold text-lg">(901) 555-0199</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-    const form = document.getElementById('leadForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const result = document.getElementById('result') || document.createElement('div');
-
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '🧠 Grok 4.3 analyzing...';
-        submitBtn.disabled = true;
-
-        const formData = new FormData(form);
-
-        try {
-            const res = await fetch('/api/analyze', {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await res.json();
-
-            // Show result
-            const resultDiv = document.createElement('div');
-            resultDiv.className = 'mt-8 bg-green-50 border border-green-200 rounded-3xl p-8';
-            resultDiv.innerHTML = `
-                <div class="text-3xl font-bold text-green-800 mb-4">✅ Grok 4.3 Analysis Complete</div>
-                <div class="text-5xl font-bold text-green-700 mb-6">${data.priceRange}</div>
-                <div class="text-lg text-slate-700">${data.summary}</div>
-                
-                <div class="mt-6 bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-2xl">
-                    <p class="font-semibold text-orange-800">📧 Check your email shortly</p>
-                    <p class="text-orange-700">You'll receive a full report + link to book your <strong>FREE consultation</strong>.</p>
-                </div>
-            `;
-            
-            form.parentNode.appendChild(resultDiv);
-            resultDiv.scrollIntoView({ behavior: "smooth" });
-
-        } catch (err) {
-            alert("Grok 4.3 had an issue. Please try again.");
-            console.error(err);
-        }
-
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    });
-    </script>
-</body>
-</html>
+                        <div class="flex items-start gap-
