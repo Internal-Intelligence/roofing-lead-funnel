@@ -3,118 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neading AI Roof Assessment | Jonesboro, AR</title>
+    <title>Neading Remodeling | Request a Free Consultation</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
-        .form-input { transition: all 0.2s; }
-        .form-input:focus { border-color: #c2410c; box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.12); }
+        body { font-family: 'Inter', system_ui, sans-serif; background-color: #f8f5f0; }
+        .form-input {
+            background-color: #f8f5f0;
+            border: 1px solid #e5e5e5;
+        }
+        .form-input:focus {
+            border-color: #c2410c;
+            box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.1);
+        }
     </style>
 </head>
-<body class="bg-slate-50">
-    <!-- Navbar -->
-    <nav class="bg-white border-b sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+<body>
+    <!-- Top Navigation -->
+    <nav class="bg-[#d4c5b0] border-b border-[#c5b396]">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
             <div class="flex items-center gap-x-3">
-                <div class="w-12 h-12 bg-[#c2410c] rounded-2xl flex items-center justify-center">
-                    <i class="fa-solid fa-home text-white text-3xl"></i>
-                </div>
-                <div>
-                    <div class="font-bold text-2xl">Neading Remodeling</div>
-                    <div class="text-xs text-slate-500 -mt-1">ROOFING & REMODELING • AI POWERED</div>
+                <div class="flex items-center gap-x-2">
+                    <div class="w-8 h-8 bg-[#c2410c] rounded flex items-center justify-center">
+                        <i class="fa-solid fa-home text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-xl">NEADING REMODELING</div>
+                        <div class="text-[10px] text-[#8a6f47] -mt-1">Veteran-Owned • Licensed #8481 • Bonded • Insured</div>
+                    </div>
                 </div>
             </div>
-            <a href="tel:9015550199" class="flex items-center gap-x-2 text-slate-700 hover:text-[#c2410c]">
-                <i class="fa-solid fa-phone text-[#c2410c]"></i>
-                <span class="font-semibold">(901) 555-0199</span>
-            </a>
+            
+            <div class="flex items-center gap-x-8 text-sm">
+                <a href="#" class="hover:text-[#c2410c]">Home</a>
+                <a href="#" class="hover:text-[#c2410c]">About</a>
+                <a href="#" class="hover:text-[#c2410c]">Services</a>
+                <a href="#" class="hover:text-[#c2410c]">Service Areas</a>
+                <a href="#" class="hover:text-[#c2410c]">Careers</a>
+                <a href="#" class="hover:text-[#c2410c]">Subcontractors</a>
+                <a href="#" class="hover:text-[#c2410c]">Contact</a>
+            </div>
+            
+            <button class="bg-[#c2410c] text-white px-6 py-2 rounded-2xl text-sm font-semibold">Free Estimate</button>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <div class="hero-bg text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-6xl font-bold mb-6">Get Your Free<br><span class="text-[#c2410c]">AI Roof Assessment</span></h1>
-            <p class="text-xl max-w-lg mx-auto">Upload your roof photos or PDF and get an instant analysis.</p>
-        </div>
-    </div>
-
-    <!-- Form -->
-    <div class="max-w-3xl mx-auto px-6 -mt-12 relative z-10 pb-16">
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
-            <div class="bg-[#0f172a] px-8 py-6 text-white flex items-center gap-x-4">
-                <div class="w-14 h-14 bg-[#c2410c] rounded-2xl flex items-center justify-center">
-                    <i class="fa-solid fa-robot text-3xl"></i>
-                </div>
-                <div>
-                    <div class="font-bold text-2xl">AI-Powered Roof Assessment</div>
-                    <div class="text-[#c2410c] text-sm">Instant • Free • Powered by Grok 4.3</div>
-                </div>
+            <!-- Main Form Card -->
+            <div class="lg:col-span-7 bg-white rounded-3xl shadow-xl p-10">
+                <div class="text-3xl font-bold mb-8">REQUEST A FREE CONSULTATION</div>
+                
+                <form id="leadForm" class="space-y-5">
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">First name *</label>
+                            <input type="text" name="firstName" class="form-input w-full px-4 py-3 rounded-2xl" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Last name *</label>
+                            <input type="text" name="lastName" class="form-input w-full px-4 py-3 rounded-2xl" required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Email *</label>
+                            <input type="email" name="email" class="form-input w-full px-4 py-3 rounded-2xl" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Phone *</label>
+                            <input type="tel" name="phone" class="form-input w-full px-4 py-3 rounded-2xl" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Project address (city, ZIP)</label>
+                        <input type="text" name="address" class="form-input w-full px-4 py-3 rounded-2xl">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Project type *</label>
+                        <select name="projectType" class="form-input w-full px-4 py-3 rounded-2xl" required>
+                            <option value="">Select one...</option>
+                            <option value="Roof Replacement">Roof Replacement</option>
+                            <option value="Storm Damage Repair">Storm Damage Repair</option>
+                            <option value="Roof Repair">Roof Repair</option>
+                            <option value="Siding">Siding</option>
+                            <option value="Gutters">Gutters</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Tell us about your project</label>
+                        <textarea name="message" rows="4" class="form-input w-full px-4 py-3 rounded-2xl" placeholder="Scope, timeline, budget range — anything that helps us prepare."></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn"
+                            class="w-full py-4 bg-[#c2410c] hover:bg-[#9f1239] text-white font-bold text-lg rounded-2xl transition-colors">
+                        Send Request
+                    </button>
+
+                    <p class="text-xs text-center text-slate-500">We respect your privacy. Your information will only be used to respond to your request.</p>
+                </form>
             </div>
 
-            <form id="leadForm" class="p-8 space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="fullName" placeholder="Full Name" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl" required>
-                    <input type="tel" name="phone" placeholder="(901) 555-0199" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl" required>
+            <!-- Right Sidebar -->
+            <div class="lg:col-span-5 space-y-6">
+                
+                <!-- Get in Touch -->
+                <div class="bg-white rounded-3xl shadow p-8">
+                    <div class="font-bold text-xl mb-6">GET IN TOUCH</div>
+                    
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone text-[#c2410c] mt-1"></i>
+                            <div>
+                                <div class="font-medium">(901) 555-0199</div>
+                                <div class="text-sm text-slate-500">Mon–Fri 7am–6pm</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-envelope text-[#c2410c] mt-1"></i>
+                            <div>info@neadinghomeservices.com</div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-map-marker-alt text-[#c2410c] mt-1"></i>
+                            <div>
+                                Bartlett, TN<br>
+                                <span class="text-sm text-slate-500">Greater Memphis service area</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <input type="email" name="email" placeholder="Email Address" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl" required>
-                <input type="text" name="address" placeholder="Property Address" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl" required>
 
-                <div>
-                    <label class="block font-medium mb-2">Project Type</label>
-                    <select name="projectType" class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl">
-                        <option value="Roof Replacement">Roof Replacement</option>
-                        <option value="Storm Damage Repair">Storm Damage Repair</option>
-                        <option value="Roof Repair">Roof Repair</option>
-                        <option value="Other">Other</option>
-                    </select>
+                <!-- Emergency Box -->
+                <div class="bg-[#c2410c] text-white rounded-3xl p-8">
+                    <div class="font-bold text-2xl mb-4">EMERGENCY?</div>
+                    <div class="mb-5 text-sm">For urgent exterior or storm damage repairs, call us directly:</div>
+                    <a href="tel:9015550199" class="block w-full py-3.5 bg-black text-center rounded-2xl font-bold text-lg">(901) 555-0199</a>
                 </div>
-
-                <div>
-                    <label class="block font-medium mb-2">Upload Roof Photos or PDF</label>
-                    <input type="file" name="photos" multiple accept="image/*,.pdf" class="w-full p-4 border border-slate-300 rounded-2xl">
-                </div>
-
-                <button type="submit" id="submitBtn"
-                        class="w-full py-5 bg-gradient-to-r from-[#c2410c] to-[#9f1239] text-white font-bold text-xl rounded-3xl">
-                    ANALYZE MY ROOF
-                </button>
-            </form>
-
-            <div id="result" class="hidden p-8 bg-slate-50 border-t border-slate-200"></div>
+            </div>
         </div>
     </div>
 
     <script>
     const form = document.getElementById('leadForm');
     const submitBtn = document.getElementById('submitBtn');
-    const result = document.getElementById('result');
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-
+        
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = 'Submitting...';
         submitBtn.disabled = true;
 
-        // Simulate success (we'll connect real backend later)
         setTimeout(function() {
-            result.classList.remove('hidden');
-            result.innerHTML = `
-                <div class="bg-green-50 border border-green-200 rounded-3xl p-8 text-center">
-                    <div class="text-5xl mb-4">✅</div>
-                    <div class="text-3xl font-bold text-green-800 mb-4">Form Submitted Successfully!</div>
-                    <div class="text-lg text-slate-700">Thank you! We will contact you within 1 hour.</div>
-                </div>
-            `;
-            result.scrollIntoView({ behavior: "smooth" });
-            
+            alert("Thank you! Your request has been received. We will contact you within 1 hour.");
+            form.reset();
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-            form.reset();
         }, 1200);
     });
     </script>
