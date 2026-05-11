@@ -1,0 +1,67 @@
+from supabase import create_client
+from playwright.sync_api import sync_playwright
+from bs4 import BeautifulSoup
+import time
+import re
+import os
+from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# ====================== SUPABASE SETUP ======================
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+def save_lead(lead):
+    try:
+        data = {
+            "full_name": lead.get("full_name"),
+            "phone": lead.get("phone"),
+            "email": None,
+            "address": lead.get("address"),
+            "project_type": lead.get("project_type"),
+            "timeline": None,
+            "notes": lead.get("notes"),
+            "photos_urls": None,
+            "ai_assessment": None,
+            "status": "new"
+        }
+        supabase.table("leads").insert(data).execute()
+        print(f"✅ Saved: {lead.get('full_name')}")
+    except Exception as e:
+        print(f"❌ Error saving: {e}")
+
+# ====================== SCRAPER ======================
+SEARCH_QUERIES = [
+    "kitchen remodel Bartlett TN",
+    "bathroom renovation Germantown TN",
+    "siding repair Collierville TN",
+    "gutter replacement Memphis TN",
+    "exterior wood repair Arlington TN",
+]
+
+def scrape_google(query):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        page.goto(f"https://www.google.com/search?q={query.replace(' ', '+')}")
+        time.sleep(4)
+
+        soup = BeautifulSoup(page.content(), "html.parser")
+        results = soup.select("div.g")
+
+        for r in results[:10]:
+            try:
+                name = r.select_one("h3").get_text(strip=True) if r.select_one("h3") else None
+                phone_match = re.search(r"\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}", r.get_text())
+                phone = phone_match.group() if phone_match else None
+
+                if name:
+                    lead = {
+                        "full_name": name,
+                        "phone": phone,
+                        "address": query.split()[-2] if len(query.split()) > 2 else "Mem
